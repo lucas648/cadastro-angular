@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  height: auto;
+  margin: 0;
+}
+
+.default-button{
+  height: 52px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  background-color: #d60b52;
+  border: 0;
+  padding: 16px;
+  min-width: 222px;
+}
+
+.error-field{
+  color:#d60b52;
+  padding: 8px 0;
+}

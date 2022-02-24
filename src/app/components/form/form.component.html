@@ -1,0 +1,108 @@
+<div class="form">
+    <header-comp></header-comp>
+    <div *ngIf="!dadosEnviados">
+      <form 
+        class="form__container"
+        [formGroup]="formCadastro" 
+        (ngSubmit)="enviarDados()"
+      >
+        <div class="form__item">
+          <input 
+            class="form__input"
+            id="nomeInput"
+            formControlName="nome" 
+            placeholder="Nome" 
+            type="text"
+          />
+          <div
+            class="error-field" 
+            *ngIf="formCadastro.controls['nome'].errors?.['required'] && formCadastro.controls['nome'].touched"
+          >
+            Campo Obrigatório!!
+          </div>
+        </div>
+    
+        <div class="form__item">
+          <input 
+            class="form__input"
+            id="cpfInput"
+            formControlName="cpf" 
+            placeholder="CPF"
+            mask="000.000.000-00"
+          />
+          <div 
+            class="error-field"
+            *ngIf="formCadastro.controls['cpf'].errors?.['required'] && formCadastro.controls['cpf'].touched" 
+          >
+            Campo Obrigatório!!
+          </div>
+          <div 
+            class="error-field"
+            *ngIf="formCadastro.controls['cpf'].errors?.['cpf'] && formCadastro.controls['cpf'].touched" 
+          >
+            Digite um CPF válido!!
+          </div>
+        </div>
+    
+        <div class="form__item">
+          <input 
+            class="form__input"
+            id="celularInput"
+            formControlName="celular" 
+            placeholder="Celular"
+            mask="(00) 00000-0000"
+          />
+          <div 
+            class="error-field"
+            *ngIf="formCadastro.controls['celular'].errors?.['required'] && formCadastro.controls['celular'].touched"
+          >
+            Campo Obrigatório!!
+          </div>
+        </div>
+    
+        <div class="form__item">
+          <input 
+            class="form__input"
+            id="emailInput"
+            formControlName="email" 
+            placeholder="E-mail" 
+            type="email"
+          />
+          <div 
+            class="error-field"
+            *ngIf="formCadastro.controls['email'].errors?.['required'] && formCadastro.controls['email'].touched"
+          >
+            Campo Obrigatório!!
+          </div>
+          <div 
+            class="error-field"
+            *ngIf="formCadastro.controls['email'].errors?.['email'] && formCadastro.controls['email'].touched"
+          >
+            Digite um email válido!!
+          </div>
+        </div>
+    
+        <div>
+          <button 
+            class="default-button form__button" 
+            type="submit"
+          >
+            Enviar
+          </button>
+          <button 
+            class="default-button" 
+            (click)="voltar()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="dadosEnviados" class="form__container">
+      <div class="form__sucesso">
+        <p class="form__paragrafo">Obrigado!!</p>
+        <p class="form__texto">Você recebera mais informções em breve!!</p>
+      </div>
+    </div>
+</div>
+  

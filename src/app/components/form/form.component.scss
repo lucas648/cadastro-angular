@@ -1,0 +1,33 @@
+.form{
+  &__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 90px;
+    align-items: center;
+  }
+
+  &__item{
+    padding-bottom: 16px;
+  }
+
+  &__input{
+    width: 400px;
+    height: 32px;
+  }
+
+  &__button{
+    margin: 16px;
+  }
+
+  &__sucesso{
+    text-align: center;
+  }
+
+  &__paragrafo{
+    font-size: 24px;
+  }
+  &__texto{
+    font-size: 19px;
+  }
+}
